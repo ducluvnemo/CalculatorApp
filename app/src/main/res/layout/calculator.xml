@@ -1,49 +1,81 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:gravity="center"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
 
+    <!-- Màn hình hiển thị -->
     <TextView
-        android:id="@+id/tvResult"
-        android:text="0"
-        android:textSize="32sp"
-        android:gravity="end"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#EFEFEF"
-        android:padding="10dp" />
+        android:id="@+id/txtDisplay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="end|bottom"
+        android:text="@string/display_default"
+        android:textSize="56sp"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/grid"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
+    <!-- Lưới nút bấm 4 cột -->
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:id="@+id/grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:columnCount="4"
         android:rowCount="5"
-        android:paddingTop="16dp">
+        android:useDefaultMargins="true"
+        android:padding="8dp"
+        app:layout_constraintTop_toBottomOf="@id/txtDisplay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Các nút số -->
-        <Button android:text="7" />
-        <Button android:text="8" />
-        <Button android:text="9" />
-        <Button android:text="/" />
+        <!-- Hàng 1 -->
+        <Button
+            android:id="@+id/btnCE"
+            android:text="@string/key_ce"
+            style="?attr/materialButtonOutlinedStyle"/>
+        <Button
+            android:id="@+id/btnC"
+            android:text="@string/key_c"
+            style="?attr/materialButtonOutlinedStyle"/>
+        <Button
+            android:id="@+id/btnBS"
+            android:text="@string/key_bs"
+            style="?attr/materialButtonOutlinedStyle"/>
+        <Button
+            android:id="@+id/btnDiv"
+            android:text="@string/key_div"
+            style="?attr/materialButtonOutlinedStyle"/>
 
-        <Button android:text="4" />
-        <Button android:text="5" />
-        <Button android:text="6" />
-        <Button android:text="*" />
+        <!-- Hàng 2 -->
+        <Button android:id="@+id/btn7" android:text="@string/d7"/>
+        <Button android:id="@+id/btn8" android:text="@string/d8"/>
+        <Button android:id="@+id/btn9" android:text="@string/d9"/>
+        <Button android:id="@+id/btnMul" android:text="@string/key_mul"/>
 
-        <Button android:text="1" />
-        <Button android:text="2" />
-        <Button android:text="3" />
-        <Button android:text="-" />
+        <!-- Hàng 3 -->
+        <Button android:id="@+id/btn4" android:text="@string/d4"/>
+        <Button android:id="@+id/btn5" android:text="@string/d5"/>
+        <Button android:id="@+id/btn6" android:text="@string/d6"/>
+        <Button android:id="@+id/btnSub" android:text="@string/key_sub"/>
 
-        <Button android:text="0" />
-        <Button android:text="BS" />
-        <Button android:text="CE" />
-        <Button android:text="+" />
+        <!-- Hàng 4 -->
+        <Button android:id="@+id/btn1" android:text="@string/d1"/>
+        <Button android:id="@+id/btn2" android:text="@string/d2"/>
+        <Button android:id="@+id/btn3" android:text="@string/d3"/>
+        <Button android:id="@+id/btnAdd" android:text="@string/key_add"/>
 
-        <Button android:text="C" />
-        <Button android:text="=" />
+        <!-- Hàng 5 -->
+        <Button android:id="@+id/btnSign" android:text="@string/key_sign"/>
+        <Button android:id="@+id/btn0" android:text="@string/d0"/>
+        <Button android:id="@+id/btnDot" android:text="@string/key_dot"/>
+        <Button android:id="@+id/btnEq" android:text="@string/key_eq"/>
     </GridLayout>
-</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
